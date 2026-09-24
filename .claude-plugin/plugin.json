@@ -1,0 +1,10 @@
+{
+  "name": "chorus",
+  "version": "0.1.0",
+  "description": "Run paid ads through Chorus: read accounts and reports, forecast for free, propose campaigns — the owner confirms every spend in Chorus.",
+  "author": { "name": "Chorus", "url": "https://www.chorushq.net" },
+  "homepage": "https://www.chorushq.net/mcp",
+  "license": "MIT",
+  "skills": ["./skills/chorus"],
+  "mcpServers": "./.mcp.json"
+}

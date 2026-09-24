@@ -1,0 +1,7 @@
+{
+  "name": "chorus-skills",
+  "owner": { "name": "Chorus", "url": "https://www.chorushq.net" },
+  "plugins": [
+    { "name": "chorus", "source": ".", "description": "Run paid ads through Chorus from Claude — reads free, every spend confirmed by the owner in Chorus.", "version": "0.1.0" }
+  ]
+}
