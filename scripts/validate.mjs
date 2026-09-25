@@ -9,7 +9,9 @@ const skill = fs.readFileSync(new URL("../skills/chorus/SKILL.md", import.meta.u
 const lines = skill.split("\n").length;
 if (lines > 500) { console.error(`SKILL.md is ${lines} lines (> 500)`); process.exit(1); }
 for (const f of ["../.claude-plugin/plugin.json", "../marketplace.json", "../.mcp.json"]) JSON.parse(fs.readFileSync(new URL(f, import.meta.url), "utf8"));
-const mentioned = [...new Set([...skill.matchAll(/`([a-z][a-z0-9_]+)`/g)].map((m) => m[1]).filter((n) => n.includes("_")))];
+// Backticked identifiers that are fields, card kinds or flags — not tools.
+const NOT_TOOLS = new Set(["approve_url", "launch_spec", "create_campaign", "validate_only", "proposal_id", "fair_use_left", "read_external", "customer_id"]);
+const mentioned = [...new Set([...skill.matchAll(/`([a-z][a-z0-9_]+)`/g)].map((m) => m[1]).filter((n) => n.includes("_") && !NOT_TOOLS.has(n)))];
 let live;
 try { live = await (await fetch(URL_, { signal: AbortSignal.timeout(8000) })).json(); }
 catch (e) { console.error(`could not fetch ${URL_}: ${e}`); process.exit(2); }
