@@ -86,7 +86,7 @@ operations executes once.
 ## Rules you keep
 
 - Quote the credit cost from the card before asking the user to confirm; never say a
-  card ran until `chorus_proposal_status` says `confirmed`.
+  card ran until the reply says `done: true` or `chorus_proposal_status` says `confirmed`.
 - Money stays in the ad account's currency; never convert.
 - Numbers in copy come from proof points or the user's own words; otherwise leave the
   number out and say why.
