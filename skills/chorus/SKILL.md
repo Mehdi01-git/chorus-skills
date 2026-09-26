@@ -46,7 +46,11 @@ fit). Present ranges as ranges. Never invent a number.
 **Hands mode (default, 3 credits per platform):** you write the strategy and the copy,
 Chorus validates and launches.
 1. Draft the spec: `{product_name, platforms, goal, budget (per platform, native
-   currency), duration_days, audience, strategy, copy_by_platform, proof_points?}`.
+   currency), duration_days, audience, geo_locations, landing_url, strategy,
+   copy_by_platform, proof_points?}`. `geo_locations` (ISO country codes) is required:
+   ask the user where — there is no default market. `landing_url` is the user's real
+   page (required for Google Ads and LinkedIn); never guess a domain — one that does
+   not answer is refused.
 2. `campaign_spec_validate` (free, pure code): refuses unbacked numbers (any figure in
    copy must come from the brand's proof points), wrong currency, platform-policy
    misses, regulated claims. Fix what it names; re-validate.
@@ -54,7 +58,9 @@ Chorus validates and launches.
    confirmation the campaign is created PAUSED on each platform.
 
 **Brain mode (22 credits for four networks, fewer for fewer):** `brief_draft` with the
-brief → a `create_campaign` card. Chorus writes strategy, per-platform copy and a
+brief → a `create_campaign` card. Its `budget_usd` is historically named: it is the
+total in the ad account's OWN currency (see `chorus_whoami`), never converted — 500 on a
+MAD account is 500 MAD. It needs a country or place and a real landing page too. Chorus writes strategy, per-platform copy and a
 review; created PAUSED.
 
 `chorus_review` (2 credits) — ask Chorus's reviewer to score a spec or copy you wrote
