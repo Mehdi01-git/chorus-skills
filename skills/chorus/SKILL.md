@@ -1,6 +1,6 @@
 ---
 name: chorus
-description: Run paid ads through Chorus from your assistant — read every ad account and report, forecast a campaign for free, write or validate a campaign, and propose it; what runs without the owner's tap follows their autonomy setting, and ad spend always waits for them. Use when the user mentions Chorus, their ad accounts (Google Ads, Meta, LinkedIn, TikTok), a campaign forecast, a weekly report, or wants a campaign launched.
+description: Run paid ads through Chorus from your assistant — read every ad account and report, simulate a campaign for free, write or validate a campaign, and propose it; what runs without the owner's tap follows their autonomy setting, and ad spend always waits for them. Use when the user mentions Chorus, their ad accounts (Google Ads, Meta, LinkedIn, TikTok), a campaign simulation (a forecast), a weekly report, or wants a campaign launched.
 ---
 
 # Chorus — the hands that cannot overspend
@@ -11,7 +11,7 @@ call runs under the user's own Chorus account and the project they picked at sig
 and the owner's **autonomy setting** for this connection (Chorus → Settings → Connected
 apps) decides what happens next — never you:
 - **It ran at once** (the reply says `done: true`, with the outcome): pausing and lowering
-  a budget, and — only in *Automatic* on the Autopilot plan — forecasts, drafting a
+  a budget, and — only in *Automatic* on the Autopilot plan — simulations, drafting a
   campaign, launching it paused and Google changes that don't touch spend, within the
   connection's daily credit limit.
 - **It waits for the owner** (the reply has a card and an `approve_url`,
@@ -45,10 +45,10 @@ Campaigns are always created PAUSED; the owner presses Go live in Chorus.
 - `tasks_list` → the night robots and their schedules; `chorus_proposal_status` → what
   happened to a card.
 
-## Forecast before spending (free the first time, then 5 credits)
+## Simulate before spending (free the first time, then 5 credits)
 
 `simulate_propose` with product, audience, goal, platforms, budget and duration → a
-card. When confirmed, the forecast shows benchmark ranges per platform (clicks, cost,
+card. When confirmed, the simulation shows benchmark ranges per platform (clicks, cost,
 fit). Present ranges as ranges. Never invent a number.
 
 ## Two ways to launch — the user picks
