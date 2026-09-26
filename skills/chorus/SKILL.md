@@ -16,7 +16,9 @@ apps) decides what happens next — never you:
   connection's daily credit limit.
 - **It waits for the owner** (the reply has a card and an `approve_url`,
   `https://www.chorushq.net/inbox/{id}`): everything else. **Starting or raising ad spend
-  always waits for the owner.** Say what the card does and what it costs, then stop.
+  always waits for the owner.** On Claude.ai, in *Confirm in the chat*, the owner may see
+  a Confirm card right in the chat — the tap is theirs alone; you cannot press it.
+  Say what the card does and what it costs, then stop.
 Campaigns are always created PAUSED; the owner presses Go live in Chorus.
 
 ## Start every session
