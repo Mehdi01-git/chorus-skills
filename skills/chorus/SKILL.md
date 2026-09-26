@@ -58,9 +58,9 @@ Chorus validates and launches.
    confirmation the campaign is created PAUSED on each platform.
 
 **Brain mode (22 credits for four networks, fewer for fewer):** `brief_draft` with the
-brief → a `create_campaign` card. Its `budget_usd` is historically named: it is the
-total in the ad account's OWN currency (see `chorus_whoami`), never converted — 500 on a
-MAD account is 500 MAD. It needs a country or place and a real landing page too. Chorus writes strategy, per-platform copy and a
+brief → a `create_campaign` card. Its `budget_total` is the total in the ad account's
+OWN currency (see `chorus_whoami`), exactly as the user said it, never converted — 500 on
+a MAD account is 500 MAD. It needs a country or place and a real landing page too. Chorus writes strategy, per-platform copy and a
 review; created PAUSED.
 
 `chorus_review` (2 credits) — ask Chorus's reviewer to score a spec or copy you wrote
