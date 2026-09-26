@@ -1,21 +1,29 @@
 ---
 name: chorus
-description: Run paid ads through Chorus from your assistant — read every ad account and report, forecast a campaign for free, write or validate a campaign, and propose it; the owner confirms every spend in Chorus. Use when the user mentions Chorus, their ad accounts (Google Ads, Meta, LinkedIn, TikTok), a campaign forecast, a weekly report, or wants a campaign launched.
+description: Run paid ads through Chorus from your assistant — read every ad account and report, forecast a campaign for free, write or validate a campaign, and propose it; what runs without the owner's tap follows their autonomy setting, and ad spend always waits for them. Use when the user mentions Chorus, their ad accounts (Google Ads, Meta, LinkedIn, TikTok), a campaign forecast, a weekly report, or wants a campaign launched.
 ---
 
 # Chorus — the hands that cannot overspend
 
 Chorus is connected as an MCP server (`https://mcp.chorushq.net/mcp`). Every tool you
 call runs under the user's own Chorus account and the project they picked at sign-in.
-**Reads are free. Anything that costs credits or touches an ad account is a proposal**:
-the tool returns a card id and an `approve_url`; the user confirms it in Chorus
-(`https://www.chorushq.net/inbox/{id}`). Nothing runs on your say-so. Campaigns are
-created PAUSED; the user presses Go live in Chorus.
+**Reads are free. Anything that costs credits or touches an ad account is a proposal**,
+and the owner's **autonomy setting** for this connection (Chorus → Settings → Connected
+apps) decides what happens next — never you:
+- **It ran at once** (the reply says `done: true`, with the outcome): pausing and lowering
+  a budget, and — only in *Automatic* on the Autopilot plan — forecasts, drafting a
+  campaign, launching it paused and Google changes that don't touch spend, within the
+  connection's daily credit limit.
+- **It waits for the owner** (the reply has a card and an `approve_url`,
+  `https://www.chorushq.net/inbox/{id}`): everything else. **Starting or raising ad spend
+  always waits for the owner.** Say what the card does and what it costs, then stop.
+Campaigns are always created PAUSED; the owner presses Go live in Chorus.
 
 ## Start every session
 
 1. `chorus_whoami` — account, project, plan, credit balance, connected platforms,
-   fair-use calls left today. If the plan is Free, say so before proposing anything
+   fair-use calls left today, and this connection's `autonomy` (mode, what it means,
+   credits left today): tell the user up front what will run at once and what will wait. If the plan is Free, say so before proposing anything
    that costs credits; a Free account launches on one platform at a time.
 2. `google_ads_list_accounts` when Google Ads is connected — never assume the manager
    (MCC) account; pick the client account the user names.
