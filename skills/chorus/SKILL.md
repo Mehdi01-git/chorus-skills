@@ -1,6 +1,6 @@
 ---
 name: chorus
-description: Run paid ads through Chorus from your assistant — read every ad account and report, simulate a campaign for free, write or validate a campaign, and propose it; what runs without the owner's tap follows their autonomy setting, and ad spend always waits for them. Use when the user mentions Chorus, their ad accounts (Google Ads, Meta, LinkedIn, TikTok), a campaign simulation (a forecast), a weekly report, or wants a campaign launched.
+description: Run paid ads through Chorus from your assistant — read your Chorus campaigns' reports and your Google Ads account, simulate a campaign for free, write or validate a campaign, and propose it; what runs without the owner's tap follows their autonomy setting, and ad spend always waits for them. Use when the user mentions Chorus, their ad accounts (Google Ads, Meta, LinkedIn, TikTok), a campaign simulation (a forecast), a weekly report, or wants a campaign launched.
 ---
 
 # Chorus — the hands that cannot overspend
@@ -92,9 +92,13 @@ before proposing it.
 always waits for the owner's tap in Chorus. For Google Ads specifics (Pro),
 `google_ads_mutate_propose` with an operation list (campaign, ad group, criterion, ad,
 asset, label, bid-modifier and bidding-strategy operations only): `validate_only` runs
-first, created objects are forced PAUSED, a daily budget above Chorus's per-campaign
-safety cap (about USD 100,000, in the account's currency) is refused — never clamped —
-and a retried call with the same operations executes once.
+first, created objects are forced PAUSED, and a retried call with the same operations
+executes once. Chorus's per-campaign safety cap (about USD 100,000, in the account's
+currency) is checked as a total and refused — never clamped: a daily budget above it; a
+raised daily budget, or a campaign moved to a bigger budget, × the days left to the
+campaign's end (one month when it has no end date — then the refusal asks to set an end
+date or lower the daily budget); and a later end date × its daily budget. Lowering a
+budget always passes.
 
 ## Rules you keep
 
