@@ -10,7 +10,7 @@ const lines = skill.split("\n").length;
 if (lines > 500) { console.error(`SKILL.md is ${lines} lines (> 500)`); process.exit(1); }
 for (const f of ["../.claude-plugin/plugin.json", "../marketplace.json", "../.mcp.json"]) JSON.parse(fs.readFileSync(new URL(f, import.meta.url), "utf8"));
 // Backticked identifiers that are fields, card kinds or flags — not tools.
-const NOT_TOOLS = new Set(["approve_url", "launch_spec", "create_campaign", "validate_only", "proposal_id", "fair_use_left", "read_external", "customer_id", "geo_locations", "landing_url", "budget_usd", "budget_total"]);
+const NOT_TOOLS = new Set(["approve_url", "launch_spec", "create_campaign", "validate_only", "proposal_id", "read_external", "customer_id", "geo_locations", "landing_url", "budget_usd", "budget_total", "can_manage_campaigns", "can_apply_changes", "what_that_means", "daily_credit_limit", "ad_spend_confirmed_in_chat", "product_name", "target_audience", "duration_days", "platform_budgets", "platform_currencies", "copy_by_platform", "proof_points"]);
 const mentioned = [...new Set([...skill.matchAll(/`([a-z][a-z0-9_]+)`/g)].map((m) => m[1]).filter((n) => n.includes("_") && !NOT_TOOLS.has(n)))];
 let live;
 try { live = await (await fetch(URL_, { signal: AbortSignal.timeout(8000) })).json(); }
