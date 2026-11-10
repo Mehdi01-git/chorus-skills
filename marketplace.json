@@ -1,7 +1,15 @@
 {
   "name": "chorus-skills",
-  "owner": { "name": "Chorus", "url": "https://www.chorushq.net" },
+  "owner": {
+    "name": "Chorus",
+    "url": "https://www.chorushq.net"
+  },
   "plugins": [
-    { "name": "chorus", "source": ".", "description": "Run paid ads through Chorus from Claude — reads free, every spend confirmed by the owner in Chorus.", "version": "0.1.0" }
+    {
+      "name": "chorus",
+      "source": ".",
+      "description": "Chorus from Claude — make videos, photos, voices and music, run ads on your own ad accounts, post your creations; reads are free, every paid or outward step is confirmed by you on a card.",
+      "version": "0.2.0"
+    }
   ]
 }
