@@ -21,7 +21,7 @@ wait.
 
 ## Start every session
 
-1. `chorus_whoami` — the account, its Chorus points and free Pro photos left, which ad
+1. `chorus_whoami` — the account, its Chorus points, which ad
    platforms are connected, and what this connection may do.
 2. `points_balance` when the user asks what they can afford; it also gives the page where
    points are bought (points are bought in Chorus, never through you).
@@ -45,7 +45,7 @@ wait.
   made longer).
 - A creation takes a few minutes. After the user confirms, read `my_creations` for its
   state rather than guessing; a failed creation gives its points back by itself.
-- Guided templates (an ad on a model, a brand shoot, a voice-over) live in the Chorus app,
+- Guided templates (a film on a model, a brand shoot) live in the Chorus app,
   not here: point the user to Chorus for those.
 
 ## Ads — the user's own ad accounts
