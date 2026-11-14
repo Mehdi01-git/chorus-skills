@@ -8,7 +8,7 @@
     {
       "name": "chorus",
       "source": ".",
-      "description": "Chorus from Claude — make videos, photos, voices and music, run ads on your own ad accounts, post your creations; reads are free, every paid or outward step is confirmed by you on a card.",
+      "description": "Chorus from your assistant — make anything (films, photos, talking characters, songs, voice-overs, ads), run ads on your own ad accounts, post your creations; reads are free, every paid or outward step is confirmed by you on a card.",
       "version": "0.2.0"
     }
   ]
